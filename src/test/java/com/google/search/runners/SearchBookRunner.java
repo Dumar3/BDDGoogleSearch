@@ -7,5 +7,6 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
     features = {"src/test/resources/features/search_book.feature"},
-    glue = {"com.google.search.stepdefinitions"})
+    glue = {"com.google.search.stepdefinitions"},
+    tags = {"@WorkingOn"})
 public class SearchBookRunner {}
