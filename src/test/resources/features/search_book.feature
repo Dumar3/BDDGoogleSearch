@@ -16,7 +16,6 @@ Feature: Google homepage search
     And I select the first result of the search
     Then the 'Patrick Rothfuss - The Books' page should be displayed
 
-  @WorkingOn
   Scenario: Display suggestions list
     When I write 'The name of the w' into the search field
     Then the suggestions list is dispayed

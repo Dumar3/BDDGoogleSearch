@@ -28,6 +28,8 @@ public class SearchBookStepDefinition {
     googleHomePage.enterBookName(bookName);
     if (searchOption.equals(SEARCH_BUTTON_OPTION)) {
       googleHomePage.clickSearchButton();
+    } else if (searchOption.equals(SUGGESTIONS_LIST_OPTION)) {
+      googleHomePage.selectFirstOptionSuggestionsList();
     }
   }
 
@@ -37,8 +39,8 @@ public class SearchBookStepDefinition {
   }
 
   @When("I write '(.*)' into the search field")
-  public void iWriteIntoTheSearchField(String string) {
-    // TODO:
+  public void writeBookName(String bookName) {
+    googleHomePage.enterBookName(bookName);
   }
 
   @Then("^the (.*) results page is dispayed$")
@@ -57,15 +59,17 @@ public class SearchBookStepDefinition {
   }
 
   @Then("the '(.*)' page should be displayed")
-  public void verifyBookPage(String bookPageName) {
+  public void verifyBookPage(String expectedBookPageName) {
     MatcherAssert.assertThat(
         String.format(
-            "The expected page name is '%s' but was '%s'", bookPageName, bookPage.getTittle()),
-        bookPageName.equals(bookPage.getTittle()));
+            "The expected page name is '%s' but was '%s'",
+            expectedBookPageName, bookPage.getTittle()),
+        expectedBookPageName.equals(bookPage.getTittle()));
   }
 
   @Then("the suggestions list is dispayed")
   public void theSuggestionsListIsDispayed() {
-    // TODO:
+    MatcherAssert.assertThat(
+        "The suggestions list was not displayed", !googleHomePage.isSuggestionsListUndisplayed());
   }
 }
