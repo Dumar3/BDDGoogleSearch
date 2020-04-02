@@ -43,7 +43,7 @@ public class SearchBookStepDefinition {
     googleHomePage.enterBookName(bookName);
   }
 
-  @Then("^the (.*) results page is dispayed$")
+  @Then("^the (.*) results page is displayed$")
   public void verifyResultsPage(String string) {
     MatcherAssert.assertThat(
         "The google results page was not displayed", googleResultsPage.isResultsPageDisplayed());
@@ -67,7 +67,7 @@ public class SearchBookStepDefinition {
         expectedBookPageName.equals(bookPage.getTittle()));
   }
 
-  @Then("the suggestions list is dispayed")
+  @Then("the suggestions list is displayed")
   public void theSuggestionsListIsDispayed() {
     MatcherAssert.assertThat(
         "The suggestions list was not displayed", !googleHomePage.isSuggestionsListUndisplayed());

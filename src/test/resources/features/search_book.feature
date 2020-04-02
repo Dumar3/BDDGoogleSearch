@@ -8,7 +8,7 @@ Feature: Google homepage search
 
   Scenario: Find the first result in google using the search button
     When I search 'The name of the wind' using search button
-    Then the Google Search results page is dispayed
+    Then the Google Search results page is displayed
     And the first result is 'The Name of the Wind - Patrick Rothfuss'
 
   Scenario: Go to a book page with search button
@@ -18,11 +18,11 @@ Feature: Google homepage search
 
   Scenario: Display suggestions list
     When I write 'The name of the w' into the search field
-    Then the suggestions list is dispayed
+    Then the suggestions list is displayed
 
   Scenario: Find the first result in google using the suggestions list
     When I search 'The name of the w' using suggestions list
-    Then the Google Search results page is dispayed
+    Then the Google Search results page is displayed
     And the first result is 'The Name of the Wind - Patrick Rothfuss'
 
   Scenario: Go to a book page with suggestions list
